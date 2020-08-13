@@ -1,0 +1,87 @@
+- IDE : Integrated Development Environment 
+
+- Literal values : are used when we want to set some variable to a specific value within our program
+    eg : x=6 
+    the literal 6 denotes any object with the integer value of 6
+
+- In assignment statement, 
+the thing on the left side of the equals sign is a reference and 
+the thing on the right side is either another reference or a newly created object 
+
+- 4.5E10 represents the float 45000000000.0
+
+- two kinds of methods in any object-oriented language: 
+mutator and 
+accessor methods. 
+
+- Accessor methods access the current state of an object but don’t change the object. 
+Accessor methods return new object references when called.
+example - upper method 
+
+    x = 'hi'
+    y = x.upper
+
+    here, x is not changed by calling the upper method on it. The upper method is an accessor method. 
+
+- Mutator methods : These methods actually change the existing object. 
+example -  reverse method on the list type.
+
+    mylist = [1,2,3]
+    mylist.reverse()
+
+    The reverse method mutates the existing object. 
+    Once called, a mutator method can’t be undone. 
+    The change or mutation is permanent until mutated again by some other mutator method.
+
+- Immutable class : int, float, str 
+
+CLASS :
+
+    - Every class contains one special method called a constructor. 
+    The constructor’s job is to create an instance of an object by placing references to data 
+    within the object itself.
+
+    - The special variable self always points at the current object and 
+    must be the first parameter to each method in the class. 
+    Python takes care of passing the self argument to the methods. 
+    The other arguments are passed by the programmer when the method is called. 
+
+- An identifier is a name given to entities like class, functions, variables, etc. 
+It helps to differentiate one entity from another.
+
+READING MULTI-LINE RECORD FILE :
+    - for reading multi line record file we need a WHILE LOOP and NOT FOR LOOP 
+    
+    - Loop and a Half Pattern :
+    To use a while loop to read from a file, we need a loop and a half. The half comes before the
+    while loop.
+
+    simply put : When you use a while loop, you need to be able to check a condition to see
+                if you are done reading the file. 
+                But, to check the condition you must first try to read
+                at least a little of a record. 
+                This is a kind of chicken and egg problem.
+
+    - For the body of the while loop to execute, the condition must be tested prior to executing the loop.
+        Reading a line prior to the while loop is necessary so we can check to see if the file is
+        empty or not
+
+POLYMORPHISM :
+    it depends in the context 
+
+GUI with Tinkter :
+    - The Tcl/Tk language and toolkit was designed as a cross-platform method of creating GUI interfaces.
+        Python provides an interface to this toolkit via the Tkinter module.
+
+    - A GUI is an event-driven program. This means that you write your code to respond
+        to events that occur in the program. The events occur as a result of mouse clicks,
+        dragging the mouse, button presses, and menu items being selected.
+
+    
+Difference between an iterator and a for loop :
+    itereator : goes from one element to another 
+                used when unsure of the number of the elements
+
+    for loop : ususally used when sure of the number of the elements that are need to be iterated through
+
+

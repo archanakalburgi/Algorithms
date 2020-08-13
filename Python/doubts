@@ -1,0 +1,17 @@
+- repr() and eval() operators -> differences 
+
+- main()
+    the main function written in file x cannot be imported by another file y ?
+    
+    (this code calls the main function to get everything started. The condition in this
+    if statement evaluates to True when the module is executed by the interpreter, but
+    not when it is imported into another module.) 
+
+    (Sometimes we write modules that we may
+    want to import into another module. Writing this if statement to call the main func-
+    tion makes the module execute its own main function when it is run as a stand-alone
+    program. When the module is imported into another module it will not execute its
+    main function.)
+
+- 
+
