@@ -1,3 +1,11 @@
 - counting number of steps in normal recursive function. 
 
 - how to create 2 dimensional array in python 
+
+- swap -> out of range - why?
+    base must be clear 
+    empty string 
+    what is pending - must be passed again 
+    * base vale is returned as recursion stops there 
+
+    - does not working for odd numbers of letters in the string 
