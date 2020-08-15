@@ -44,7 +44,7 @@ for i in range(5):
 
 
 
-# rows = 3 # rows
+# rows = 3 # rows 
 # columns = (2 * rows) - 2 # columns 
 
 # for row in range(0, rows): 
