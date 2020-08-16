@@ -3,6 +3,35 @@ will compute x ^ n. You must write this function recursively to get full credit.
 sure to put it in a program with several test cases to test that your function works
 correctly.'''
 
+def intpow(x, n):
+    if(n==1):
+        return(x)
+    if(n!=1):
+        return (x*intpow(x,n-1))
+print(intpow(2,4))
+# no of steps : 21
+
+
+
+def intpow_iterative(x,n):
+    return(x ** n)
+
+print(intpow_iterative(2,4))
+# no of steps : 5
+
+
+
+def intpower(x,n):
+    y = 1
+    for i in range(n):
+        y = y*x 
+    return y 
+
+print(intpower(2,4))
+# no of steps : 15
+
+
+
 # def intpow(x, n):
 #     if(n==1):
 #         return(x)
@@ -19,6 +48,35 @@ enter an integer and printing the factorial of that integer. Be sure your progra
 has a main function. Comment your code with the base case and recursive case
 in your recursive function.
 '''
+
+def factorial(n):
+    if n == 0:
+        return 1 # base case, it has to stop when n becomes zero 
+    else:
+        return n * factorial(n-1) # recursion : n * (n-1)
+
+def main():
+    fact = factorial(int(input('Enter the number : ')))
+    print(fact) 
+
+if __name__ == "__main__":
+    main()  
+# no of steps : 5
+
+
+def factorial_iterative(n):
+    fact = 1
+    for i in range(n):
+        fact = fact * n 
+        n = n-1
+    return fact 
+
+print(factorial_iterative()) 
+# no of steps : 2 
+
+
+
+
 # def factorial(n):
 #     if n == 0:
 #         return 1 # base case, it has to stop when n becomes zero 
@@ -33,10 +91,37 @@ in your recursive function.
 #     main()  
 
 
+
 '''3. Write a recursive function that computes the length of a string. You cannot use
 the len function while computing the length of the string. You must rely on the
 function you are writing. Put this function in a program that prompts the user to
 enter a string and then prints the length of that string. '''
+
+
+def length_of_string(word, count = 0):
+    if word :
+        count = count + 1
+        return (length_of_string(word[1:], count))
+    else :
+        return count
+
+print(length_of_string(''))
+print(length_of_string('archana'))
+# no of steps : 41
+
+
+
+def length_of_string_iterative(string):
+    count = 0 
+    for i in string :
+        count = count + 1
+    return count 
+
+print(length_of_string_iterative('abcdef')) 
+# no of steps :  19
+
+
+
 
 # def length_of_string(word, count = 0):
 #     if word :
@@ -47,6 +132,7 @@ enter a string and then prints the length of that string. '''
 
 # print(length_of_string(''))
 # print(length_of_string('archana'))
+
 
 ''' 4. Write a recursive function that takes a string like “abcdefgh” and returns “badcfehg”.
 Call this function swap since it swaps every two elements of the original
@@ -62,6 +148,16 @@ def swap(string):
         return string
 
 print(swap('abcdefgh')) 
+
+# no of steps : 22
+
+
+
+def swap_iterative(string):
+    if string :
+        for i in string :
+            new_string = string[i+1]  
+=======
 print(swap('abcd'))
 print(swap('ab'))
 
@@ -69,3 +165,4 @@ print(swap('ab'))
 # badcfehg
 # badc
 # ba
+
