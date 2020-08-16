@@ -16,7 +16,7 @@ steps :
 5. print sum 
 '''
 
-def sum_for_loop(input_list):
+def sum_for_loop(input_list): # iterative 
     sum = 0 
     count = 0
     for element in input_list:
