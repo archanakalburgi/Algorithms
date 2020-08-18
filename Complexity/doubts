@@ -9,3 +9,18 @@
     * base vale is returned as recursion stops there 
 
     - does not working for odd numbers of letters in the string 
+
+- running sum example, how to implement the same using resursion ?
+
+- max product -> 
+didn't work 
+multiplying 1st element with every other element 
+multiplying 2nd element with evry other ellement 
+ans so on 
+
+max product = product of two greatest elelments 
+
+
+
+- how to use recursion in a class?
+
