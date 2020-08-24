@@ -25,7 +25,7 @@ class Solution(object):
         return(len(array))
 
 sol = Solution()
-print (sol.numIdenticalPairs([1,2,3])) 
+print (sol.numIdenticalPairs([1,2,3,4])) 
 
 '''
 complexity : n * n 

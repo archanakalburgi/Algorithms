@@ -1,0 +1,9 @@
+merge sort algorithm :
+    /Users/archana/Algorithms/Complexity/merge_sort /rough.py
+
+    - merge is working 
+    - merge sort gives error 
+
+
+smaller_than_current :
+    /Users/archana/Algorithms/leetcode_problems/20:08:20/smaller_than_current.py

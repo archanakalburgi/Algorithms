@@ -1,0 +1,25 @@
+merge sort : merging two sorted arrys to get one single sorted array. 
+
+A, B are two sorted list 
+C is a sorted list of A and B combined 
+
+
+2 ways of merge sort :
+    1. two - way merge 
+    2. merge sort 
+
+    2-way merge sort : iterative process -> using loop 
+        - assume that every element is a list in itself 
+        - given one array of elements, assume this is an array of lists of a single element 
+        - so all elements in the list will be sorted 
+        - now have to merge these lists to get a single sorted list 
+        - using 2-way merge methode merge all the lists 
+    
+
+    merge sort : recursive 
+        - divide and conquer preocedure 
+            - divide the problems into sub problems - smaller problems 
+            - solve the smaller problems 
+            - combine the smaller solution to get the solution for the bigger problems
+        - in merge sort a single element is the smallest problem 
+        - 

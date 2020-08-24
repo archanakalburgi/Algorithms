@@ -37,4 +37,7 @@ for every i in first for loop, n for loop will be executed
 n*n is the time complexity 
 
 exponential growth 
+
+
+Is there a better way do to this using sorting ?
 '''

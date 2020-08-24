@@ -1,0 +1,32 @@
+even_digit
+/Users/archana/Algorithms/leetcode_problems/even_digit.py
+    - do the same without converting the number into string 
+DONE 
+
+
+
+pro_sum_sub 
+/Users/archana/Algorithms/leetcode_problems/pro_sum_sub.py
+    - without converting it to string 
+    - mod funtion
+DONE 
+
+
+
+
+smaller_than_current : 
+/Users/archana/Algorithms/leetcode_problems/smaller_than_current.py
+    - complexity n not n^2 
+
+
+
+
+/Users/archana/Algorithms/merge_sort /merge_sort.py
+    recursive form of merge algorithm 
+
+
+
+longest_substring : /Users/archana/Algorithms/leetcode_problems/longest_substring.py 
+
+
+
