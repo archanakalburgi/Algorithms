@@ -1,0 +1,27 @@
+1. original_index : DONE 
+/Users/archana/Algorithms/Complexity/26_aug/original_index.py
+    - take care of the elements that are not present in the array
+    - return the index of the element that is present in the array 
+
+2. binary search : DONE 
+/Users/archana/Algorithms/Complexity/26_aug/b_s.py
+    return the index of the element present in the array 
+
+3. k - closest point : DONE 
+/Users/archana/Algorithms/Complexity/26_aug/kclosest_points.py
+    shorten the 2nd half of the code 
+    - sort the array by distance and return point 
+
+4. 169 - Majority number - DONE 
+    - Got it using a dict, try doing it without dict
+
+
+5. Price = [100, 113, 110, 85, 105, 102, 86, 63, 81, 101, 94, 106, 101, 79, 94, 90, 97]
+How can u buy a share at lower price and sell at higher price and get profit, how can u maximize the profit
+
+
+6. read list append and extend from python docs
+
+
+7. python generators - https://anandology.com/python-practice-book/iterators.html 
+

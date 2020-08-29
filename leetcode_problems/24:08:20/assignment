@@ -1,0 +1,28 @@
+prob 53 : maximun subarray
+    /Users/archana/Algorithms/leetcode_problems/24:08:20/maximim_subarray.py
+
+    only few inputs can be solved 
+
+
+
+prob 169 : majority element - done
+    /Users/archana/Algorithms/leetcode_problems/24:08:20/majority_element.py
+
+
+
+prob 973 : K closest point to origin 
+    /Users/archana/Algorithms/leetcode_problems/24:08:20/k_closest_points.py 
+
+    could only return the distance and not the points 
+    TypeError: unhashable type: 'list'
+
+
+
+Chapter 3 : recursion 
+
+
+selling and buying problem :
+    - store all the differences i.e, difference between one number will all the folling numbers in the array 
+    - return the maximun difference 
+
+    -  
