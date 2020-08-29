@@ -1,0 +1,54 @@
+4. majority element  : 
+    /Users/archana/Algorithms/leetcode_problems/24:08:20/majority_element.py
+
+    solve without dictionary 
+
+
+
+5. subarray :
+    - generate all the sub arrays -> 1st prob 
+    then find max sum
+
+
+
+1. k closest point : DONE 
+    /Users/archana/Algorithms/leetcode_problems/24:08:20/k_closest_points.py
+
+    try using tuples
+
+    could add distance and points in the tuple 
+    yet unable to retrive only the points of the corresponding distance 
+
+    wrong answer 
+    input -> [[0,1],[1,0],2]
+
+    changed for loop range from (0,k) to (0,len(array))
+    then returned[:k], as they will in the ascending order 
+
+
+    right answer but time limit exceeded  
+
+
+
+2. write binary search algorithm : DONE
+    /Users/archana/Algorithms/Complexity/25_aug/binary_search.py
+
+    when called merge sort :
+    - returning true if element is present 
+    - if not present -> max recursion depth reached 
+
+        worked -> tweaked merge sort : if len(array) <= 1
+            checked if the array has reached to the size less than 1 
+            (in binary search mid element is returned)
+
+            not very clear. need to go through again 
+
+    when called insertion sort :
+    - worked 
+
+
+
+3. write a function that searchs an element in an array and    : DONE 
+returns it's original array index if present. 
+(check the presence of the element using merge sort)  
+ 
