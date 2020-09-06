@@ -1,27 +1,30 @@
-'''class Solution(object):
-    def maxProduct(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        i = 0
-        j = i+1 
-        array = [] 
-        for i in range(0, len(nums)-1):
-            product = 1
-            for j in range (len(nums)-1):
-                product = (nums[i]-1) * (nums[j]-1)
-            array.append(product)    
-        return (max(array)) 
+def compare(A, B):
+    if A[0] == B[0]:
+        return
+    else :
+        return compare(A[1:],B[1:])
+    
+def divide(array):
+    if len(array) == 1 :
+        return array
+    else :
+        mid = len(array)//2
+        left = divide(array[:mid])
+        right = divide(array[mid:])
+        duplicate = compare(left,right)
+        return duplicate 
 
-s2 = Solution()
-print(s2.maxProduct([10,2,5,2])) '''
+'''
+array = [1,2,3,4,4,5]
+left = [1,2,3]
+left = [1]
+right = [2,3]
 
-def maxProduct(self, nums):
-    first_greatest = max(nums)
-    nums.remove(first_greatest)
-    second_greatest = max(nums)
-    return (first_greatest-1) * (second_greatest-1)
+left = [2]
+right = [3]
 
-print(maxProduct([1,5,4,5]))
 
+right = [4,4,5]
+'''
+
+print(divide([1,2,3,4,4,5])) 

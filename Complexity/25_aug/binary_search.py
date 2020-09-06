@@ -28,3 +28,4 @@ def binary_search(array, key):
 
 print(binary_search(mergesort.merge_sort([4,1,5,2,8,0]),8))  
  
+
