@@ -71,4 +71,4 @@ def merge_sort(array) :
         return sorted_array 
 
 array = [2,8,15,18,5,9,12,17,1]
-print(merge_sort(array))  
+print(merge_sort(array))   
