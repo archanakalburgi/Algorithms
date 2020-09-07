@@ -49,12 +49,8 @@ def common_elements_array2(A,B):
     else:
         for i in A:
             res = binary_search(B,i)
-            if res:
-                result = binary_search(C,i)
-                if result == None:
-                    C.append(i) 
-            # if res and i not in C:
-            #     C.append(i) 
+            if res and i not in C:
+                C.append(i) 
     return C 
 
 '''

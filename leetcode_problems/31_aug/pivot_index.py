@@ -122,10 +122,10 @@ def pivot_index2(nums):
     # print(left_sum_array)
     # [1, 8, 11, 17, 22, 28]
 
-    for j in range(len(nums)-1,0,-1):
+    for j in range(len(nums)-1,-1,-1):
         right_sum = right_sum + nums[j]
         right_sum_array.append(right_sum) 
-    # print(right_sum_array)
+    print(right_sum_array)
     # [6, 11, 17, 20, 27, 28]
 
     '''
@@ -133,11 +133,7 @@ def pivot_index2(nums):
     but that will be n^2 so use binary search
     '''
     for k in range(len(left_sum_array)):
-        res = binary_search(right_sum_array,left_sum_array[k])
-        if res :
-            return k+1 
-    
-    # print(res)
+        res = binary_search(right_sum_array[k:],left_sum_array[k])
         
-print(pivot_index1([1,7,3,6,5,6]))       
-print(pivot_index2([1,7,3,6,5,6])) 
+       
+print(pivot_index1([1,7,3,6,5,6]))
