@@ -131,7 +131,7 @@ class Solution(object):
                 sorted_intervals[i][1] = min(sorted_intervals[i][1],sorted_intervals[i-1][1])
                 # storing min so that the intervals become continous to compare with the next element
         return count 
-
+c
         
 
         # while(right < n):

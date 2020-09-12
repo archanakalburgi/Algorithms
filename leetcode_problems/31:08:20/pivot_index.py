@@ -114,30 +114,76 @@ def pivot_index2(nums):
     left_sum_array = []
     right_sum = 0
     right_sum_array = [] 
-    reversed_nums = nums[::-1]
+    # reversed_nums = nums[::-1]
     # print(reversed_nums)
     for i in range(len(nums)):
-        left_sum = left_sum + nums[i]
+        if i == 0:
+            left_sum = left_sum + 0
+        else:
+            left_sum = left_sum + nums[i-1]
         left_sum_array.append(left_sum) 
     # print(left_sum_array)
     # [1, 8, 11, 17, 22, 28]
 
-    for j in range(len(nums)-1,0,-1):
-        right_sum = right_sum + nums[j]
+    for j in range(len(nums)-1,-1,-1):
+        # print(len(nums))
+        # print(j)
+        if j == len(nums)-1:
+            right_sum = right_sum + 0
+        else :
+            right_sum = right_sum + nums[j+1]
         right_sum_array.append(right_sum) 
     # print(right_sum_array)
     # [6, 11, 17, 20, 27, 28]
 
-    '''
-    we can use binary search to fing the same sum bur instead we can use one more for loop to search
-    but that will be n^2 so use binary search
-    '''
-    for k in range(len(left_sum_array)):
-        res = binary_search(right_sum_array,left_sum_array[k])
-        if res :
-            return k+1 
+    reversed_right = right_sum_array[::-1]
+
+    print(left_sum_array)
+    print(reversed_right)
+
+    for k in range(len(left_sum_array)-1):
+        if left_sum_array[k] == reversed_right[k]:
+            return k 
+    
+    return -1 
+
     
     # print(res)
         
-print(pivot_index1([1,7,3,6,5,6]))       
+# print(pivot_index1([1,7,3,6,5,6]))       
 print(pivot_index2([1,7,3,6,5,6])) 
+
+'''
+
+      11,6,0
+ 0 1 2 3 4 5            
+[1,7,3,6,5,6] 
+ 0,1,8,11,17,22,28
+
+left_sum=0
+i
+0 -> 0+nums(i-1) 0 + 0 = 0
+1 -> left_sum+nums(i-1) = 0 + 1 = 1
+2 -> left_sum + nums(i-1) = 1 + 7 = 8
+3 -> left_sum + nums(i-1) = 8 + 3 = 11
+4 -> left_sum + nums(i-1) = 11 + 6 = 17
+5 -> left_sum + nums(i-1) = 17 + 5 = 22
+6 -> left_sum + nums(i-1) = 
+
+i 
+5 -> right_sum + nums(i+1) = 0 + 0 = 0
+4 -> right_sum + nums(i+1) = 0 + 6 = 6
+3 -> right_sum + nums(i+1) = 6 + 5 = 11
+2 -> right_sum + nums(i+1) = 11 + 6 = 17
+1 -> right_sum + nums(i+1) = 17 + 3 = 20
+0 -> right_sum + nums(i+1) = 20 + 7 = 27 
+
+left =  [0, 1, 8, 11,17,22]
+right = [27,20,17,11,6, 0] 
+
+
+for i in range(len(left)):
+    if left[i] == right[i]:
+        return i 
+'''
+
