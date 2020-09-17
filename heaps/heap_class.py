@@ -29,7 +29,7 @@ def has_right_child(i):
     ''' in this traversal, we visit the node first and then traverse left and the right subtrees in order
     reprat the same till we hit a null child link  '''
 def preorderTrav(subtree):
-    if subtree id not None :
+    if subtree is not None :
         print(subtree.data)
         preorderTrav(subtree.left)
         preorderTrav(subtree.right)
@@ -42,29 +42,34 @@ def preorderTrav(subtree):
             or we are trying to follow a non existent link for one or both of the children'''
 
 def inorderTrav(subtree):
-    if subtree id not None :
+    if subtree is not None :
         preorderTrav(subtree.left)
         print(subtree.data)
         preorderTrav(subtree.right)
 
 def postorderTrav(subtree):
-    if subtree id not None :
+    if subtree is not None :
         preorderTrav(subtree.left)
         preorderTrav(subtree.right)
         print(subtree.data)
 
 def breadthFirstTrav(bintree):
-        # create a queue and add the root node 
+        # create a queue and add the root node [1,2,3]
+        '''
+            1
+        2       3
+    4       7
+        '''
     Queue q
-    q.enqueue (bintree)
+    q.enqueue (bintree) # q = [1]
     while not q.is_empty():
         # remove next node from the queue and vist it
-        node = q.dequque()
-        print(node.data)
+        node = q.dequque()  # node = 1, q = [] , node = 2 , q = [3] , node = 3 , q = [4,7] , node = 4 , q =[7] , node = 7, q=[]
+        print(node.data) # 1 , 2 , 3 , 4 , 7
         # add two childer to the queue 
-        if node.left is not None:
+        if node.left is not None: # [2] , [3,4] 
             q.enqueue(node.left)
-        if node.right is not None:
+        if node.right is not None: # [2,3] , [3,4,7]
             q.enqueue(node.right) 
 
 #  array implementation of max heap 
