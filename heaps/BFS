@@ -1,0 +1,56 @@
+               A
+        /           \
+        B              C
+    /       \       /       \
+   D         E      F       G
+            /            /      \
+            H            I       J     
+
+1. print A
+2. check for children 
+3. if yes, remember A's children : B,C by adding them in a queue 
+    q = B,C 
+
+4. print q.pop -> B 
+5. check for children
+6. if yes, remember B's children : D,E by adding them in the queue 
+    q = C,D,E 
+
+7. print q.pop -> C 
+8. check for children
+9. if yes, remember B's children : F,G by adding them in the queue 
+    q = D,E,F,G 
+
+10. print q.pop -> D 
+11. check for children 
+12. if not return None 
+
+13. print q.pop -> E
+14. check for children 
+15. if yes, remember E's children : H by adding them in the queue 
+    q = F,G,H
+
+16. print q.pop -> F 
+17. check for children 
+18. if not return None
+
+19. print q.pop -> G
+20. check for children 
+21. if yes, remember G's children by adding them in the queue 
+    q = H,I,J
+
+22. print q.pop -> H
+23. check for children 
+24. if no return None 
+
+25. print q.pop -> I 
+26. check for chidren 
+27. if no return return None
+
+28. print q.pop -> J
+29. check for children 
+30. if no return None
+
+
+
+
