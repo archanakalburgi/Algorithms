@@ -1,0 +1,45 @@
+expression tree -> abstract data type defination : 
+    (expression tree is a DT and this DT has many fuctions in it 
+    just like list is a DT and it has many fuctions -> append, extend, len etc )
+
+    Expression tree abstract data type has following functions:
+
+    1. ExpressionTree(expStr):
+        i/p : expStr ((2*3)+(4-1)) 
+        o/p : tree 
+
+    2. evaluate(varDict):
+        - Evaluates the expression tree and returns the numeric result.
+
+        i/p : expression tree 
+        o/p : interger (result of exp) 
+
+    3. toString():
+        i/p : ????
+        o/p : string representation of the expression
+
+
+
+page 382 : illustration 
+
+
+while building a tree in previous prob :
+class TreeNode:
+    def __init__(self, data):
+        i/p :   root = TreeNode(1) 
+                root.left = TreeNode(1)
+                .
+                .
+                .
+        o/p : (a node with left and right child) 
+
+class ExpressionTree :
+    def__init__(self, expStr):
+        self.expTree = None     # expTree is an attibute, while sending an i/p we specify expTree, 
+                                # like left and right in TreeNode
+
+        self.buildTree(expStr) # this builds the expression tree 
+
+        * it only stores the reference to the root node of the expression tree 
+
+    

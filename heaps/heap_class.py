@@ -76,7 +76,8 @@ def breadthFirstTrav(bintree):
 class MaxHeap():
     # Create a max-heap with maximum capacity of maxSize.
     def __init__( self, maxSize ):
-        self.count = 0 # keeps track of how many element sis added to the heap/array
+        self.count = 0 # keeps track of how many element sis added to the heap/array .
+        # this will you add element at the end the list and then move it up accordingly 
         self.elements = []  # pg 396 line 5 
 
 
