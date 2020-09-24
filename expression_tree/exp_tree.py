@@ -49,7 +49,7 @@ class ExpressionTree:
     def buildTree(self, expStr):
         exp_q = Queue()
         for token in expStr:
-            exp_q.enqueue(token)
+            exp_q.enqueue(token) 
 
         self.expTree = ExpTreeNode(None)
         self.rec_build_tree(self.expTree, exp_q)
