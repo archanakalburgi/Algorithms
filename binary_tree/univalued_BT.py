@@ -9,7 +9,7 @@ class TreeNode():
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
-        self.right = right
+        self.right = right 
 
 class Solution:
     def isUnivalTree(self, root):
@@ -17,21 +17,10 @@ class Solution:
         i/p: TreeNode
         o/p: True/False -> bool
         """
-        def is_univalue(root):
-        ''''
-            if root == None :
-                return True
+        left = root.left == None or root.left.val == root.val and self.isUnivalTree(root.left)
+        right = root.right == None or root.right.val == root.val and self.isUnivalTree(root.right)
+        return left and right 
 
-            else:
-                return is_univalue(root.left) and is_univalue(root.right)     
-
-        if root == None :
-            return True  
-        else :
-            val = root.val 
-            return is_univalue(root)
-        '''
-# why??
          
 
 root = TreeNode(1)
@@ -39,7 +28,7 @@ root.left = TreeNode(1)
 root.right = TreeNode(1) 
 root.left.left = TreeNode(1)
 root.left.right = TreeNode(1)
-root.right.right = TreeNode(5) 
+root.right.right = TreeNode(1) 
 
 
 sol = Solution()

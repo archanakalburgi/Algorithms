@@ -81,7 +81,7 @@ class Solution(object):
         def height (root):
             # count = 0
             if root == None:
-                return 1 
+                return True 
 
             else:
                 left = height(root.left) 
@@ -89,21 +89,28 @@ class Solution(object):
                 return max(left,right)+1 
        
         if root == None :
-            return True 
+            return True   
 
         else :
             height_left = height(root.left)
-            height_right = height(root.right) 
-            return height_right == height_left+1 or height_left == height_right+1 
+            height_right = height(root.right)
+            if abs(height_left - height_right) > 1:
+                return False
+            else :
+                return self.isBalanced(root.left) and self.isBalanced(root.right) 
+            
+            # return height_left or height_right or height_right == height_left + 1 or height_left == height_right + 1 
 
-root = TreeNode(3)
+root = TreeNode(1)
 
-root.left  = TreeNode(9) 
+root.left  = TreeNode(2) 
  
-root.right = TreeNode(20)
-root.right.left = TreeNode(15) 
-root.right.right = TreeNode(7) 
-    
+root.right = TreeNode(2)
+root.left.left = TreeNode(3) 
+root.left.right = TreeNode(3)
+root.left.left.left = TreeNode(4) 
+root.left.left.right = TreeNode(4) 
+
 sol = Solution()
 print(sol.isBalanced(root)) 
 
