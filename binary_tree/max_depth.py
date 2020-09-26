@@ -35,7 +35,7 @@ class Solution(object):
         if root == None :
             return 0 
         else :
-            print(root.val)
+            # print(root.val)
             left = self.maxDepth(root.left)
             right = self.maxDepth(root.right)
             return max(left,right)+1 
