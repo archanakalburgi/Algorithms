@@ -43,5 +43,5 @@ root.left.right = TreeNode(5)
 root.right.right = TreeNode(5)
 
 sol = Solution()
-print(sol.countUnivalSubtrees(root)) 
+print(sol.countUnivalSubtrees(root))  
     
