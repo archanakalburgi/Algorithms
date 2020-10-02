@@ -41,9 +41,26 @@ return all nodes that are k distance(edges) away from target node
 '''
 
 '''
-    1
-   / \
-  2   3
+           3
+        /       \
+       5         1
+      / \       / \
+     6   2     0   8
+        / \   
+       7   4 
 
-target = starting point   
+target = starting point  
+
+search target in the tree 
+
+target = 5 
+k = 2
+
+        q = [5]
+        
+        5:
+        q = [5,6,2,3]
+        q1 = [6,2,3] # storing everyone related to 5 
+
+    
 '''
