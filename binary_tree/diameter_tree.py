@@ -120,3 +120,15 @@ root.left.right = TreeNode(5)
 
 sol = Solution()
 print(sol.diameterOfBinaryTree(root)) 
+
+
+'''
+i am 1 
+some asks i'll ask person below me and add 1 to that value (1 being me) and say x value and say I am max 
+
+but one the other person has x value he checks with previous maximum value if x is max he updates maximum 
+
+        finally we have true maximum 
+
+then i will return max of left and right child + 1 (one being me) 
+'''
