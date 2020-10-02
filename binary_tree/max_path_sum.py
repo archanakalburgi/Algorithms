@@ -36,6 +36,16 @@ appending nodes to a list ??
 appending all the path 
 summing all paths 
 return max 
+
+
+filed when :
+    max_path_sum = 0
+    because 0 > -x
+
+changed max_path_sum = 0 to max_path_sum = -9999
+    failed for [2, -1]
+    because -9999 < -1 
+
 '''
 
 class TreeNode(object):
@@ -45,7 +55,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution(object):
-    max_path_sum = 0 
+    max_path_sum = -9999 
 
     def PathSum(self, root):
 
@@ -72,13 +82,13 @@ class Solution(object):
         return self.max_path_sum 
 
 
-root = TreeNode(-10)
+root = TreeNode(2) 
 
-root.left  = TreeNode(9) 
-root.right = TreeNode(20)
+root.left  = TreeNode(-1) 
+# root.right = TreeNode(20)
 
-root.right.left = TreeNode(15)
-root.right.right = TreeNode(7)
+# root.right.left = TreeNode(15)
+# root.right.right = TreeNode(7)
 
 sol = Solution()
 print(sol.maxPathSum(root)) 

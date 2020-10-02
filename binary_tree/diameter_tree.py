@@ -97,7 +97,7 @@ class TreeNode(object):
         self.right = right
 
 class Solution(object):
-    final_max = 0 
+    final_max = 0
     def diameterOfBinaryTree(self, root):
         if root == None :
             return 0
