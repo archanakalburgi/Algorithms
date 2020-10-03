@@ -17,7 +17,7 @@ class Solution(object):
         return (first_greatest-1) * (second_greatest-1)
     
 S1 = Solution()
-S1.maxProduct([10,2,5,2])
+print(S1.maxProduct([10,2,5,2]))
 
 
 '''
