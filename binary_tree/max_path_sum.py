@@ -57,23 +57,28 @@ class TreeNode(object):
 class Solution(object):
     max_path_sum = -9999 
 
-    def PathSum(self, root):
+    def PathSum(self, root): # 2 
 
         if root == None:
             return 0
 
         else:
-            # path_sum = root.val + path_sum
-
-            left_sum = self.PathSum(root.left)
+            
+            left_sum = self.PathSum(root.left) 
             right_sum = self.PathSum(root.right)
 
+            if left_sum == 0 :
+                left_sum = 0
+             
+            if right_sum == 0:
+                right_sum = 0 
+                
             if left_sum + right_sum + root.val > self.max_path_sum :
                 self.max_path_sum = left_sum + right_sum + root.val
 
             return max(left_sum + root.val, right_sum + root.val)
 
-    def maxPathSum(self, root):
+    def maxPathSum(self, root): # 2 
         self.PathSum(root)
 
         if root == None:
@@ -93,3 +98,25 @@ root.left  = TreeNode(-1)
 sol = Solution()
 print(sol.maxPathSum(root)) 
 
+
+
+pathSum(2):
+    left = pathSum(-1):
+            left = pathSum(None)
+                left = 0
+                right = pathSum(None)
+                    right = 0 
+
+                    0+0-1 > -9999
+                    -1 > -9999
+                    max_path_sum = -1 
+
+                    0 + -1 , 0 - 1 
+                    -1 
+    left = -1 
+    right = pathSum(None)
+    right = 0 
+
+    -1 + 0 + 2 > -1 
+    1 > -1 
+                
