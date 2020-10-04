@@ -43,7 +43,7 @@ return all nodes that are k distance(edges) away from target node
 '''
            3
         /       \
-       5         1
+       5         1   
       / \       / \
      6   2     0   8
         / \   
