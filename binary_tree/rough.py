@@ -121,3 +121,6 @@ class Solution1(object):
             return self.res 
 '''
 
+1. count_nodes -> done 
+2. closes_bst_value ->
+3. even_valued_grandparent -> 
