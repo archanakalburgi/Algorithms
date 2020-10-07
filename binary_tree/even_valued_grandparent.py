@@ -22,12 +22,18 @@ class TreeNode(object):
 class Solution(object):
     tsum = 0
 
-    def evenGrandparent(self, root, parent, grandparent):
+    def evenGrandparent(self, root, parent = 1, grandparent = 1):
         if root:
-            if grandparent :
-                self.tsum = self.tsum + root.val 
-                self.evenGrandparent(root.left, root.val%2 == 0, parent) 
-                self.evenGrandparent(root.right, root.val%2 == 0, parent) 
+            if grandparent % 2 == 0:
+                self.tsum += root.val 
+                # self.tsum = self.tsum + root.val
+            # print('\n') 
+            # print('node = '+str(root.val))
+            # print('parent = '+str(parent))
+            # print('grandparent = '+str(grandparent))
+            # print(self.tsum)
+            self.evenGrandparent(root.left, root.val, parent)  # node, parent, grandparent
+            self.evenGrandparent(root.right, root.val, parent)  
 
     def sumEvenGrandparent(self, root):
         """
@@ -36,16 +42,28 @@ class Solution(object):
         """
         # tsum = 0
 
-        self.evenGrandparent(root, False, False)
+        self.evenGrandparent(root)
         return self.tsum 
 
-root = TreeNode(6)
-root.left = TreeNode(7) 
-root.right = TreeNode(2)
-root.left.left = TreeNode(7)
-root.left.right = TreeNode(7)
-root.left.left.left = (9) 
+'''
+1. what to send as node parent and grandparent ? 
 
+2. if parent = 0 and grandparent = 0, 
+    as soon as called condition gets executed even though actual grandparent is odd 
+    0%2 = 0 : is true even if gp is an odd number but 
+    we want it to change only if grandparent is even
+    so make gp odd in the begining 
+
+'''
+
+root = TreeNode(6)
+root.left = TreeNode(7)  
+root.right = TreeNode(8)
+root.left.left = TreeNode(2)
+root.left.right = TreeNode(7)
+root.left.left.left = TreeNode(9) 
+root.left.right.left = TreeNode(1)
+root.left.right.right = TreeNode(4) 
 root.right.left = TreeNode(1) 
 root.right.right= TreeNode(3)
 root.right.right.right = TreeNode(5) 
