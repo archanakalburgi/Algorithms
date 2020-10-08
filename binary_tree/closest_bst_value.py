@@ -10,7 +10,7 @@ You are guaranteed to have only one unique value in the BST that is closest to t
 Example:
 
 Input: root = [4,2,5,1,3], target = 3.714286
-
+    
     4
    / \
   2   5
@@ -25,21 +25,21 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
+
 class Solution(object):
-    def traverseTree(self, root, target):
+    def traverseTree(self, root, target, closestNode):
         if root == None :
-            return 0
-        closestNode = 0 
-        left = self.traverseTree(root.left, target)
-        right = self.traverseTree(root.right, target)
+            return closestNode 
+        
+    
+        if abs(root.val - target) < abs(closestNode - target): 
+            closestNode = root.val 
 
-        if abs(float(left) - target) < abs(float(root.val) - target) :
-            closestNode = left 
+        if root.val > target :
+            return self.traverseTree(root.left, target, closestNode) 
 
-        if abs(float(right) - target) < abs(float(root.val) - target):
-            closestNode = right 
-
-        return closestNode 
+        else :
+            return self.traverseTree(root.right, target, closestNode)
 
     def closestValue(self, root, target):
         """
@@ -51,23 +51,26 @@ class Solution(object):
             return
 
         else :
-            return self.traverseTree(root, target)
+            return self.traverseTree(root, target, root.val)
 
-        # def pickClosest(root, closest = 999): 
-        #     if root == None:
-        #         return
+
+# (4, 2.7, 4): <- 3 
+#     is 4 - 2.7 < 4 - 2.7 -> 1.3 < 1.3 : False
+
+#     is 4 > 2.7 : True
+#         traverseTree(2, 2.7, 4): <- 3
+#             is 2 - 2.7 < 4 - 2.7 -> 0.7 < 1.3 : True
+#                 closestNode = 2
             
-        #     else :
-        #         left = pickClosest(root.left)
-        #         right = pickClosest(root.right)
-        #         if closest > target - root.val:
-        #             closest = root.val 
-        #         return closest 
+#             is 2 > 2.traverseTree7 : False 
 
-        # if root == None:
-        #     return 
-        # else :
-        #     return pickClosest(root, target)
+#             traverseTree(3, 2.7, 2) : <- 3
+#                 is 3 - 2.7 < 2 - 2.7 -> 0.3 < 0.7 : True 
+#                     closestNode = 3  
+
+#                 is 3 > 2.7 : True
+#                     traverseTree(None, 2.7, 3):
+#                         return 3 
 
 root = TreeNode(4)
 root.left = TreeNode(2)
@@ -76,6 +79,25 @@ root.left.left = TreeNode(1)
 root.left.right = TreeNode(3)
 
 sol = Solution()
-print(sol.closestValue(root,3.714286))    
+print(sol.closestValue(root,3.7))     
 
-            
+
+'''
+new on BST : 
+
+        4               : is a bst
+      /   \ 
+    2       5
+  /   \
+1       3
+
+
+        4               : not a bst , 4 > 3 , 3 can't be on the right side of 4 
+      /   \
+    2       3 
+  /    \          
+1       5
+
+''' 
+
+
