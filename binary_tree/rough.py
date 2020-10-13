@@ -1,126 +1,99 @@
-'''
-1026. Maximum Difference Between Node and Ancestor
-
-Given the root of a binary tree, find the maximum value V for which there exists different 
-nodes A and B where V = |A.val - B.val| and A is an ancestor of B.
-
-(A node A is an ancestor of B if either: any child of A is equal to B, or any child of A is an ancestor of B.)
-
-
-eg:
-
-Input: [8,3,10,1,6,null,14,null,null,4,7,13]
-Output: 7
-Explanation: 
-We have various ancestor-node differences, some of which are given below :
-|8 - 3| = 5
-|3 - 7| = 4
-|8 - 1| = 7
-|10 - 13| = 3
-Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 7.
-
-'''
-
-class TreeNode(object):
+class TreeNode():
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-class Solution(object):
+def allPaths(root, sum, nlist): # 
+    if root: 
 
-    def diff(self, root, minValue = 9999, maxValue = 0 ):
-        if root == None:
-            return 0 
-        
-        left = self.diff(root.left, minValue, maxValue)
-        right = self.diff(root.right, minValue, maxValue)
+        nlist + [root.val]
 
-        if root.val < minValue:
-            minValue = root.val 
+        if root.left == None and root.right == None and sum-root.val == 0:   
+            return nlist + [root.val] # [1,2,4], [1,3]
 
-        if root.val > maxValue:
-            maxValue = root.val 
+        else :
+            left = allPaths(root.left, sum-root.val, nlist + [root.val])  # left = allPaths(2) , allPths(none,[1,2]) | left =[] | left =[[1,2,4]]
+            right = allPaths(root.right, sum-root.val, nlist + [root.val]) # right = allPath(4,[1,2]) | right = [1,2,4] | allPath(3,[1]) |  rigt = [1,3] 
+    
+        return [left] + [right] # [[[1,2,4]],[1,3]]
 
-        return max(maxValue - minValue, left, right)  
 
-    def maxAncestorDiff(self,root):
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(6) 
+root.left.left = TreeNode(3)
+root.left.right = TreeNode(4) 
 
-        if root == None:
-            return 0 
+print(allPaths(root, 7, nlist=[]))   
 
-        return self.diff(root)  
+'''
+return [left[-1]]
+    does not work if the tree has a left child 
+'''
 
-diff(8,9999,0)
-    l = diff(3,9999,0)
-        l = diff(1,9999,0)
-            l = diff(None, 9999, 0)
-            l = 0 
-            r = diff(None, 9999, 0)
-            r = 0
-            1 < 9999 : False 
-            1 > 0 : True 
-            maxValue = 1 
-            return max(1-9999, 0, 0)
-        
+'''
+    def pathSum(root,sum):
+        def path(root, summ, p): # path(5,0,p=[]) | path(4,5,[5]) | path(11,9,[5,4]) | path(7,20,[5,4,11]) || path(2,20,[5,4,11]) | path(8,5,[5]) | path(13,13,[5,8])|path(none,26,[5,8,13])| path(4,13,[5,8]) | path(5,17,[5,8,4,5])
+            if root == None: 
+                return self.paths 
+            
+            if root.left == None and root.right == None: # f | f | f | T  || T | f | T | f | T
+                if summ + root.val == sum: # 20+7 = 27 != 22 : f || 20+2 = 22 == 22 : t | 13+13=26 != 22 : f | 17+5 = 22 == 22 : T
+                    p + [root.val] # p = [5,4,11,2] | p = [5,8,4,5]
+                    self.paths + [p] # paths = [5,4,11,2] | path = [5,4,11,2],[5,8,4,5]
+                    # print(p) 
+                return self.paths 
+                # 
+            p.append(root.val) # p = [5] | [5,4] | [5,4,11] | [5,8] | [5,8,13] | [5,4,8,4] 
 
-root = TreeNode(8)
-root.left  = TreeNode(3) 
-root.right = TreeNode(10)
+            path(root.left, summ+root.val, p) # path(4,5,[5]) | 👈🏻 path(11,9,[5,4]) | 👈🏻 path(7,20,[5,4,11])  nothing returned | path(13,13,[5,8])| path(none,26,[5,8,13]) | path(none)
+            path(root.right, summ+root.val, p) # path(2,20,[5,4,11]) | path(8,5,[5]) | path(4,13,[5,8]) | path(5,17,[5,8,4,5]) | path(1,22,[])
 
-root.left.left = TreeNode(1) 
-root.left.right = TreeNode(6)
+        p = [] 
+        path(root,0,p)  
+        return self.paths 
 
-root.left.right.left= TreeNode(4)
-root.left.right.right = TreeNode(7)
 
-root.right.right = TreeNode(14)
-root.right.right.left = TreeNode(13) 
+# if root: # 1 ,2 
+    #     temp.append(root.val)  # temp =[1,2,4]
+         
+    #     if root.left == None and root.right == None:  #  
+    #         return nlist.append(temp)  # nlist=[1,2,4] 
 
-sol = Solution()
-print(sol.maxAncestorDiff(root))
+    #     else:
+    #         left = allPaths(root.left, nlist, temp[:])  # left = allPaths(2,[],[1]) , left = allPaths(none,[],[1,2])   
+    #         right = allPaths(root.right, nlist, temp[:]) # right = allPaths(4,[],[1,2]). allpaths(4,[1,2,4], [1,2,4])
+
+    # return nlist  
+'''
 
 
 '''
-class Solution1(object):
-    res = 0
-    # def __init__(self):
-        # self.minValue = 0
-        # self.maxValue = 9999
+nlist = []
+def allPaths(root, nlist): # (1,[]) , (2, [1]) , (none, [1,2])  , (3, [1,2]) 
+    
+    if root == None: 
+        return nlist []
 
-    def calculateDiff(self, root, maxValue = -999, minValue = 999):
-        if root == None:
-            return 0
-             
+    else :
+        nlist.append(root.val) # [1,2], []
 
-        left = self.calculateDiff(root.left, max(maxValue, root.val), min(minValue, root.val))  
-        right = self.calculateDiff(root.right, max(maxValue, root.val), min(minValue, root.val))
- 
-        if root.val > minValue:
-            minValue = root.val
+        left = allPaths(root.left, nlist)  # allPaths(2, [1]) | allpaths(none, [1,2]) | [1,2]
+        right = allPaths(root.right, nlist) # allPaths (3, [1,2]) 
 
-        if root.val > maxValue:
-            maxValue = root.val 
+    
 
-        self.res = abs(maxValue - minValue)
+def allPaths(root, nlist): #  allPaths(1,[]) | allPaths(2,[1]) | appPaths(none,[1,2]) | allPaths(4,[1,2]) | allPaths(3,[1])
+    
+    if root ==  None : # 
+        return [] # []
+         
+    if root.left == None and root.right == None:   
+        return nlist + [root.val] # [1,2,4], [1,3]
 
-        return 
-
-    def maxAncestorDiff(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-        
-        self.calculateDiff(root)
-
-        if root == None:
-            return 0
-
-        else:
-            return self.res 
+    else :
+        left = allPaths(root.left, nlist + [root.val])  # left = allPaths(2) , allPths(none,[1,2]) | left =[] | left =[[1,2,4]]
+        right = allPaths(root.right, nlist + [root.val]) # right = allPath(4,[1,2]) | right = [1,2,4] | allPath(3,[1]) |  rigt = [1,3] 
+    return [left] + [right] # [[[1,2,4]],[1,3]]
 '''
-
-1. count_nodes -> done 
-2. closes_bst_value ->
-3. even_valued_grandparent -> 
