@@ -23,37 +23,67 @@ Input: root = [5,5,5,5,5,null,5]
 Output: 6
 '''
 
+
+'''
+remember :
+
+base case : last node must not have children 
+            if a node is leaf i.e has no children then it is a unival subtree and so increment count (this is the decision taken at the leaf)
+all the childrens of a node must have same value + node and it's children must have same value 
+
+possibilities of getting None ??
+'''
+
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-class Solution(object):
-    count = 0 
-    def countNodes(slef, root):
-        if root == None :
-            return True 
-        
-        left = self.countNodes(root.left, count) 
-        right = self.countNodes(root.right, count) 
+class Solution():
+    '''
+            1**
+          /    \
+        1 *      1
+      /
+    1       
+    '''
+    def countUnivalSubtrees(self, root): 
+        self.count = 0
 
-        if left == False or right == False:
+        def countUnival(root): 
+            if root == None:
+                return True 
+            
+            left = countUnival(root.left) 
+            right = countUnival(root.right) 
+            
+            if left and right: 
+                if root.left == None and root.right == None: 
+                    self.count += 1
+                    return True
+
+                if root.right and root.left == None: 
+                    if root.val == root.right.val:
+                        self.count += 1
+                        return True
+
+                if root.left and root.right == None: 
+                    if root.val == root.left.val:  
+                        self.count += 1 
+                        return True 
+
+                if root.left and root.right:
+                    if root.val == root.right.val == root.left.val:  
+                        self.count += 1
+                        return True
+            
             return False
-
-        if root.left and root.val != root.left.val:
-            return False 
-
-        if root.right and root.val != root.left.val:
-            return False
+            
+        countUnival(root)
         
-        self.count = self.count + 1
-        return True
-
-    def countUnivalSubtrees(self, root, count = 0):
-        if root == None:
-            return 0
-        return self.count 
+        return self.count
+        
 
 root = TreeNode(5)
 root.left = TreeNode(1) 

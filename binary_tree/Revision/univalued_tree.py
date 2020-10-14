@@ -14,7 +14,7 @@ Output: true
 
 
 Example 2:
-
+ 
 Input: [2,2,2,5,2]
 Output: false
  
@@ -55,8 +55,6 @@ pseudo code :
 
         return left and right 
         
-trace pseudo code:
-    
 '''
 
 class TreeNode(object):
@@ -67,42 +65,11 @@ class TreeNode(object):
 
 
 class Solution(object):
-    # def isUnivalTree(self, root): 
-    #     if root == None:
-    #         return True
-
-    #     left = self.isUnivalTree(root.left)
-    #     right = self.isUnivalTree(root.right)
-
-    #     if left and right:
-    #         if (root.left != None and root.left.val != root.val) or (root.right != None and root.right.val != root.val) :
-    #             return False  
-    #         return True
-             
-    #     return False
-
-'''
-isUniTree(1):
-    left = isUniTree(1):
-        left = isUniTree(1):
-            left = isUniTree(none)
-            left = True
-            right = isUniTree(none)
-            right = True
-
-            if left and right -> true:
-                if none != none -> false and root.left.val
-
-'''
-        
+    def isUnivalTree(self, root):     
         left = root.left == None or root.left.val == root.val and self.isUnivalTree(root.left)
         right = root.right == None or root.right.val == root.val and self.isUnivalTree(root.right)
 
         return left and right 
-
-'''
-    left = (root.left= 1 == None) -> False or 
-'''
 
 root = TreeNode(1)
 root.left = TreeNode(1)
