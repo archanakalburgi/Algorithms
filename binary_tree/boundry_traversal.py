@@ -1,3 +1,4 @@
+
 '''
         20
       /    \
@@ -100,3 +101,14 @@ root.left.right = TreeNode(5)
 # root.right.right = TreeNode(25) 
 
 boundryTraversal(root) 
+
+root = TreeNode(20)
+root.left = TreeNode(8)
+root.right = TreeNode(22)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(12) 
+root.left.right.left = TreeNode(10)
+root.left.right.right = TreeNode(14)
+root.right.right = TreeNode(25) 
+
+boundryTraversal(root)

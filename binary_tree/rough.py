@@ -1,25 +1,63 @@
 '''
-1026. Maximum Difference Between Node and Ancestor
+class Deque():
+    def __init__(self):
+        self.items = []
 
-Given the root of a binary tree, find the maximum value V for which there exists different 
-nodes A and B where V = |A.val - B.val| and A is an ancestor of B.
+    def addFront(self, data):
+        self.items.insert(0, data)
 
-(A node A is an ancestor of B if either: any child of A is equal to B, or any child of A is an ancestor of B.)
+    def addRear(self, data):
+        self.items.append(data)
 
+    def removeFront(self):
+        if self.items: 
+            self.items.pop()
 
-eg:
+    def removeRear(self):
+        if self.items:
+            self.items.pop(0)
 
-Input: [8,3,10,1,6,null,14,null,null,4,7,13]
-Output: 7
-Explanation: 
-We have various ancestor-node differences, some of which are given below :
-|8 - 3| = 5
-|3 - 7| = 4
-|8 - 1| = 7
-|10 - 13| = 3
-Among all possible differences, the maximum value of 7 is obtained by |8 - 1| = 7.
+    def isEmpty(self):
+        if self.items == []:
+            return True
+        else:
+            return False
 
+    def size(self):
+        return len(self.items)  
+
+    def peekFront(self):
+        return self.items[-1]
+
+    def peekRear(self):
+        return self.item[0] 
 '''
+
+class Queue:
+    def __init__(self):
+        self.items = []
+    
+    def enqueue(self,item): 
+        self.items.insert(0, item)
+
+    def dequeue(self):
+        if self.items:
+            return self.items.pop()
+        return None  
+
+    def peek(self):
+        if self.items:
+            return self.items[-1]
+        return None
+
+    def size(self):
+        return len(self.items) 
+
+    def is_empty(self):
+        if self.items:
+            return False
+        return True
+
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
@@ -27,100 +65,35 @@ class TreeNode(object):
         self.left = left
         self.right = right
 
-class Solution(object):
-
-    def diff(self, root, minValue = 9999, maxValue = 0 ):
-        if root == None:
-            return 0 
+class Solution:
+    def widthOfBinaryTree(self, root: TreeNode) -> int:
+        q = []
+        q.append((root, 0))
+        maxWidth = 0
         
-        left = self.diff(root.left, minValue, maxValue)
-        right = self.diff(root.right, minValue, maxValue)
+        while q:
+            size = len(q)
+            maxWidth = max(maxWidth, q[-1][1] - q[0][1]) 
+            for _ in range(size):
+                node, index = q.pop(0)
+                
+                if node.left:
+                    q.append((node.left, 2 * index))
+                
+                if node.right:
+                    q.append((node.right, 2 * index + 1))
+            
+        return maxWidth 
 
-        if root.val < minValue:
-            minValue = root.val 
+root = TreeNode(1)
+root.left = TreeNode(3)
+root.left.left = TreeNode(5)
+root.left.left.left = TreeNode(9) 
+root.left.right = TreeNode(3)
+root.right = TreeNode(2)
+root.right.left = TreeNode(4)
+# root.right.right = TreeNode(6) 
 
-        if root.val > maxValue:
-            maxValue = root.val 
-
-        return max(maxValue - minValue, left, right)  
-
-    def maxAncestorDiff(self,root):
-
-        if root == None:
-            return 0 
-
-        return self.diff(root)  
-
-diff(8,9999,0)
-    l = diff(3,9999,0)
-        l = diff(1,9999,0)
-            l = diff(None, 9999, 0)
-            l = 0 
-            r = diff(None, 9999, 0)
-            r = 0
-            1 < 9999 : False 
-            1 > 0 : True 
-            maxValue = 1 
-            return max(1-9999, 0, 0)
-        
-
-root = TreeNode(8)
-root.left  = TreeNode(3) 
-root.right = TreeNode(10)
-
-root.left.left = TreeNode(1) 
-root.left.right = TreeNode(6)
-
-root.left.right.left= TreeNode(4)
-root.left.right.right = TreeNode(7)
-
-root.right.right = TreeNode(14)
-root.right.right.left = TreeNode(13) 
 
 sol = Solution()
-print(sol.maxAncestorDiff(root))
-
-
-'''
-class Solution1(object):
-    res = 0
-    # def __init__(self):
-        # self.minValue = 0
-        # self.maxValue = 9999
-
-    def calculateDiff(self, root, maxValue = -999, minValue = 999):
-        if root == None:
-            return 0
-             
-
-        left = self.calculateDiff(root.left, max(maxValue, root.val), min(minValue, root.val))  
-        right = self.calculateDiff(root.right, max(maxValue, root.val), min(minValue, root.val))
- 
-        if root.val > minValue:
-            minValue = root.val
-
-        if root.val > maxValue:
-            maxValue = root.val 
-
-        self.res = abs(maxValue - minValue)
-
-        return 
-
-    def maxAncestorDiff(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-        
-        self.calculateDiff(root)
-
-        if root == None:
-            return 0
-
-        else:
-            return self.res 
-'''
-
-1. count_nodes -> done 
-2. closes_bst_value ->
-3. even_valued_grandparent -> 
+print(sol.widthOfBinaryTree(root)) 
