@@ -26,9 +26,3 @@ adjList = {
 result = []
 allPaths([], 0, 5)  
 print(result)  
-
-
-results  = [[0, 1, 3, 5], [0, 1, 4, 5], [0, 2, 5]] 
-
-'0135' , '0145' , '025'
-
