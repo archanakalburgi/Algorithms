@@ -1,31 +1,28 @@
-def dfs(source):
-    stack.append(source) 
-    visited.add(source)
-    # print(source) 
-    while stack:
-        node = stack.pop() 
-        dfsPath.append(node) 
-        for vertex in adjList[node]:
-            if vertex not in visited:
-                visited.add(vertex)
-                stack.append(vertex)
-    # print(visited)
-    # print(stack)
+def calculateMaxTime(n, curr, headID, manager, informTime):
+    if curr not in employees:
+        return 0
     
-adjList = {
-    'a' : ['b','c','d'],
-    'b' : ['a','c'],
-    'c' : ['a','b','d','e'],
-    'd' : ['a','c','e'],
-    'e' : ['c','d','f'],
-    'f' : ['e'] 
-    }
+    children = employees[curr]
+    maxTime = 0
 
-visited = set()
-stack = []
-dfsPath = []
-for v in adjList.keys(): 
-    if v not in visited:
-        dfs(v)     
+    for child in children:
+        maxTime = max(maxTime, calculateMaxTime(n, child,headID, manager, informTime)) 
 
-print(dfsPath)
+    return informTime[curr] + maxTime 
+
+employees = {
+    -1 : [0],
+    0  : [1, 2],
+    1  : [3, 4],
+    2  : [5, 6],
+    3  : [7, 8],
+    4  : [9, 10],
+    5  : [11, 12],
+    6  : [13, 14] 
+}
+n = 15
+headID = 0 
+manager = [-1,0,0,1,1,2,2,3,3,4,4,5,5,6,6], 
+informTime = [1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]
+curr = -1
+print(calculateMaxTime(n, curr, headID, manager, informTime)) 
