@@ -63,3 +63,13 @@ class Solution(object):
 rooms = [[1,3],[3,0,1],[2],[0]] 
 sol = Solution()
 print(sol.canVisitAllRooms(rooms)) 
+
+'''
+mark all rooms as not visited 
+
+perform dfs on the rooms 
+explore keys
+marks the keys/rooms as visited 
+
+return false if any room is not visited
+'''
