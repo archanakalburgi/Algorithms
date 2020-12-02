@@ -86,3 +86,27 @@ root.right.right = TreeNode(8)
 sol = Solution()
 print(sol.lcaDeepestLeaves(root)) 
 
+'''
+helper(root, depth):
+    if left==right==None:
+        return lca,depth
+
+    if left and right :
+        leftHeight = go_left(left, depth+1) 
+        rightHeight = go_right(right, depth+1)
+        
+        if leftHeight > rightHeight:
+            return go_left(lca, leftHeight) 
+        if rightHeight > leftHeight:
+            return go_right(lca, rightHeight)
+        return node, leftHeight
+
+    if left: 
+        go_left(left, depth+1) 
+
+    if right:
+        go_right(right, depth+1) 
+
+lca, depth = helper(root, 0)
+return lca
+'''

@@ -77,7 +77,7 @@ class Solution(object):
         bfs (root, maxValues) 
         return maxValues 
 
-root = TreeNode(1)
+root = TreeNode(1) 
 root.left = TreeNode(3) 
 root.right = TreeNode(2)
 root.left.left = TreeNode(5)
