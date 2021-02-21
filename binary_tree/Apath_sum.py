@@ -55,7 +55,7 @@ class Solution(object):
         else :
             return self.hasPathSum(root.left, sum-root.val) or self.hasPathSum(root.right, sum-root.val)   
             
-root = TreeNode(5)
+root = TreeNode(20)
 root.left = TreeNode(4)
 root.right = TreeNode(8) 
 root.left.left = TreeNode(11)
