@@ -33,6 +33,30 @@ Note:
 grid[r][c] is 0 or 1
 
 '''
+# class Solution(object):
+#     def shortestPathBinaryMatrix(self, grid):
+#         """
+#         :type grid: List[List[int]]
+#         :rtype: int
+#         """
+
+#         row = len(grid)
+#         column = len(grid[0])
+#         visited = set()
+#         queue = []
+#         direction = [(1,0),(1,1),(0,1),(-1,1),(-1,0),(-1,-1),(0,-1),(1,-1)]  
+
+#         for r in range(row):
+#             for c in range(column):
+#                 queue.append((r,c))
+#                 visited.add((r,c))
+#         # print(queue)
+
+#         while len(queue):
+#             Row , Column = queue.pop(0)
+
+#             if Row == row-1 and Column == column-1:
+
 class Solution(object):
     def shortestPathBinaryMatrix(self, grid):
 
