@@ -33,7 +33,6 @@ Note:
 grid[r][c] is 0 or 1
 
 '''
-
 # class Solution(object):
 #     def shortestPathBinaryMatrix(self, grid):
 #         """
@@ -88,4 +87,4 @@ class Solution(object):
 
 grid = [[0,0,0],[1,1,0],[1,1,0]]
 sol = Solution()
-print(sol.shortestPathBinaryMatrix(grid))
+print(sol.shortestPathBinaryMatrix(grid)) 
