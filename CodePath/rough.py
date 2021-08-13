@@ -1,30 +1,34 @@
 class Solution:
-    def helper(self,nums, start, end, subarrayList):  
-        if end == len(nums):
-                return subarrayList
-        if nums:  
-            if start > end:          
-                return self.helper(nums, 0, end+1,subarrayList)
-            else :
-                subarrayList.append(nums[start : end+1]) 
-                return self.helper(nums, start+1, end, subarrayList) 
-        
-        return subarrayList 
+    def swapPairs(self, head):
             
+        if not head or not head.next:
+            return head
         
-    def maxSubArray(self, nums: List[int]) -> int:
-        subarrays = self.helper(nums,0,0,[])
-        max_sum = float('-inf')
-        for array in subarrays:
-            max_sum = max(max_sum, sum(array))
-        return max_sum 
+        prev = None
+        newHead = None
+        temp1 = head
 
+        while temp1 and temp1.next:
+            temp2 = temp1.next
+            temp1.next = temp2.next
+            temp2.next = temp1
+            if not newHead:
+                newHead = temp2
+            else :
+                prev.next = temp2
 
-# class Solution:
-#     def maxSubArray(self, nums: List[int]) -> int:
-#         maximum = nums[0]
-#         element = nums[0]
-#         for i in range(1,len(nums)):
-#             element = max(element + nums[i], nums[i])
-#             maximum = max(maximum, element)
-#         return maximum 
+            prev = temp1
+            temp1 = temp1.next
+        
+        return newHead 
+
+    def subarray(self, array, start, end, sub):
+        if end == len(array):
+            return sub
+        if array:
+            if start > end:
+                return self.subarray(array,0,end+1,sub)
+            else:
+                sub.append(array[start:end+1])
+                return self.subarray(array,start+1,end,sub)
+        return sub
