@@ -6,7 +6,7 @@ class DFS:
         valid = []
         neighbors = [(r,c+1),(r,c-1),(r-1,c),(r+1,c)]
         for (nr,nc) in neighbors:
-            if 0<=nr<row and 0<=nc<col:
+            if 0 <= nr < row and 0 <= nc < col: 
                 valid.append((nr,nc))
         return valid
     
@@ -16,6 +16,7 @@ class DFS:
         for (nr,nc) in self.valid_neighbors(row, col, len(matrix), len(matrix[0])):
             if (nr,nc) not in self.visited:
                 self.dfs(nr,nc,matrix,traversal)
+        return traversal 
 
     def function(self, matrix):
         row = len(matrix)
@@ -24,8 +25,8 @@ class DFS:
         for ro in range(row):
             for col in range(column):
                 if (ro,col) not in self.visited:
-                    self.dfs(ro,col,matrix,traversal) 
-        print(traversal)
+                    return self.dfs(ro,col,matrix, []) 
+
 
 
 
@@ -36,4 +37,4 @@ matrix = [
     ['M','N','O','P']
 ]
 d = DFS()
-d.function(matrix)
+print(d.function(matrix))

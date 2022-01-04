@@ -9,8 +9,8 @@ def bfs(adj_list, source):
         traversal.append(vertex)
         for neighbor in adj_list[vertex]:
             if neighbor not in visited:
-                visited.add(neighbor)
                 queue.append(neighbor)
+                visited.add(neighbor)
     return traversal
 
 '''

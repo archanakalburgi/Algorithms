@@ -6,7 +6,7 @@ class BFS:
         valid = []
         neighbors = [(r,c+1),(r,c-1),(r-1,c),(r+1,c)]
         for (nr,nc) in neighbors:
-            if 0<=nr<row and 0<=nc<col:
+            if 0 <= nr < row and 0 <= nc < col:
                 valid.append((nr,nc))
         return valid
 
