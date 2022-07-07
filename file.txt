@@ -1,0 +1,363 @@
+➜  Algorithms git:(master) ✗ tree .
+.
+├── README.md
+├── binary_tree
+│   ├── Abalanced_tree.py
+│   ├── Aclosest_bst_value.py
+│   ├── Acount_univalue_subtree.py
+│   ├── Ainvert_binary_tree.py
+│   ├── Amax_depth.py
+│   ├── Amax_diff_node_anc.py
+│   ├── Amax_path_sum.py
+│   ├── Apath_sum.py
+│   ├── Asearch_binary_tree.py
+│   ├── Asymmetry.py
+│   ├── Aunivalued_BT.py
+│   ├── Revision
+│   │   ├── balancedBT.py
+│   │   ├── checkCompletenessOfBT.py
+│   │   ├── closestBSTValue.py
+│   │   ├── constructTreeFromSortedArray.py
+│   │   ├── countCompleteBTNode.py
+│   │   ├── count_unival.py
+│   │   ├── diameterOfTree.py
+│   │   ├── invertBT.py
+│   │   ├── lowestAncestorBST.py
+│   │   ├── maxDiffBetNodeAnc.py
+│   │   ├── maxPathSum.py
+│   │   ├── max_depth.py
+│   │   ├── max_width.py
+│   │   ├── notes
+│   │   ├── pathSumII.py
+│   │   ├── path_sum.py
+│   │   ├── searchInBST.py
+│   │   ├── sumOfEvenValuedGP.py
+│   │   ├── symmetricTree.py
+│   │   └── univalued_tree.py
+│   ├── Zrough.py
+│   ├── boundry_traversal.py
+│   ├── count_nodes.py
+│   ├── even_valued_grandparent.py
+│   ├── lca.py
+│   ├── lowest_ancestor.py
+│   ├── notes_templet
+│   ├── pathsum2.py
+│   ├── rough.py
+│   └── sorted_array_bst.py
+├── codesignal
+│   ├── allMostIncreasingSequence.py
+│   ├── arr_sum_neighbors.py
+│   ├── array_bool.py
+│   ├── maxArea.py
+│   ├── rough.py
+│   └── strictly_increasing.py
+├── daily_log
+│   ├── 03:09:20
+│   │   └── two_array.py
+│   ├── 03_sept
+│   │   ├── __pycache__
+│   │   │   └── merge_sort.cpython-37.pyc
+│   │   ├── merge_sort.py
+│   │   ├── non_overlapping.py
+│   │   └── two_array.py
+│   ├── 05_sept
+│   │   ├── insert_element.py
+│   │   └── pancake_problem.py
+│   ├── 07_sept
+│   │   ├── reorder_data.py
+│   │   └── robot_return_origin.py
+│   ├── 25_aug
+│   │   ├── __pycache__
+│   │   │   ├── binary_search.cpython-37.pyc
+│   │   │   ├── insertionsort.cpython-37.pyc
+│   │   │   └── mergesort.cpython-37.pyc
+│   │   ├── assignment
+│   │   ├── binary_search.py
+│   │   ├── insertionsort.py
+│   │   ├── mergesort.py
+│   │   ├── original_index.py
+│   │   └── rough.py
+│   ├── 26_aug
+│   │   ├── __pycache__
+│   │   │   ├── b_s.cpython-37.pyc
+│   │   │   └── m_s.cpython-37.pyc
+│   │   ├── assignment\ 
+│   │   ├── b_s.py
+│   │   ├── kclosest_points.py
+│   │   ├── m_s.py
+│   │   ├── majority_element.py
+│   │   ├── original_index.py
+│   │   └── rough.py
+│   ├── 27_aug
+│   │   ├── __pycache__
+│   │   │   └── ms.cpython-37.pyc
+│   │   ├── avg_salary.py
+│   │   ├── finbonacci_number.py
+│   │   ├── leet_169.py
+│   │   ├── lucky_num.py
+│   │   ├── max_share_profit.py
+│   │   ├── minimum_diff.py
+│   │   └── ms.py
+│   ├── bst
+│   │   ├── __pycache__
+│   │   │   └── sort.cpython-37.pyc
+│   │   ├── binary_search.py
+│   │   └── sort.py
+│   ├── images
+│   │   ├── Pasted\ image\ 3.png\ 1,972?\2271,470\ pixels.pdf
+│   │   ├── Pasted\ image\ 4.png\ 1,968?\2271,482\ pixels.pdf
+│   │   ├── Pasted_image_4.pdf
+│   │   ├── Pasted_image_5.pdf
+│   │   └── Screenshot\ 2020-09-08\ at\ 1.55.51\ PM.png
+│   ├── insertion_sort
+│   │   ├── i_s.py
+│   │   ├── inserion_sort_analysis
+│   │   ├── insertion_sort_notes
+│   │   └── test.py
+│   ├── merge_sort\ 
+│   │   ├── m_s.py
+│   │   ├── merge_sort.py
+│   │   ├── merge_sort_notes
+│   │   └── rough.py
+│   └── tasks
+│       ├── rough.py
+│       ├── task_1.py
+│       ├── task_2.py
+│       └── task_3.py
+├── everydayRem
+│   ├── add_binary_numbers.py
+│   ├── adder.py
+│   ├── calculation.py
+│   ├── plus_one.py
+│   ├── practice.py
+│   ├── roman_numbers.py
+│   └── rough.py
+├── expression_tree
+│   ├── doubts\ 
+│   ├── exp_tree.py
+│   └── rough.py
+├── graphs
+│   ├── adjacencyList.py
+│   ├── allPathsBetTwoNodes.py
+│   ├── asFarFromLand.py
+│   ├── bottomLeftTreeValue.py
+│   ├── breadthFirstSearch.py
+│   ├── connectedComponents.py
+│   ├── deepestLeavesSum.py
+│   ├── depthFirstSeaarch.py
+│   ├── detectCycle.py
+│   ├── dfsIterative.py
+│   ├── extra.py
+│   ├── findLargestValue.py
+│   ├── findPeekElement.py
+│   ├── keysAndRooms.py
+│   ├── lowestCommonAncestor.py
+│   ├── matrix01.py
+│   ├── maxAreaOfAnIsland.py
+│   ├── minSizeSubarraySum.py
+│   ├── numberOfEnclaves.py
+│   ├── power.py
+│   ├── rottingOranges.py
+│   ├── rough.py
+│   ├── search2DMatrix.py
+│   ├── shortestPathBinaryMatrix.py
+│   ├── squirrelSimulation.py
+│   ├── sumRootToLeaf.py
+│   ├── surroundedRegions.py
+│   ├── timeNeededToInformEmployee.py
+│   └── traversalString.py
+├── heaps
+│   ├── BFS
+│   ├── __pycache__
+│   │   └── queue.cpython-37.pyc
+│   ├── bredth_first_travel.py
+│   ├── doubts
+│   ├── heap_class.py
+│   ├── leetcode_prob
+│   │   ├── bt_level_order_traversal.py
+│   │   ├── path_sum.py
+│   │   └── preorder.py
+│   ├── max_depth.py
+│   └── queue.py
+├── leetcode_problems
+│   ├── 19_aug
+│   │   ├── defanging_ip.py
+│   │   ├── jewels.py
+│   │   ├── max_candies.py
+│   │   ├── max_element.py
+│   │   ├── max_product.py
+│   │   ├── reduce_to_zero.py
+│   │   ├── remove_element.py
+│   │   ├── running_sum.py
+│   │   ├── shuffle_array.py
+│   │   └── shuffle_string.py
+│   ├── 20_aug
+│   │   ├── decompress_encoded_list.py
+│   │   ├── even_digit.py
+│   │   ├── good_pairs.py
+│   │   ├── lower_case.py
+│   │   ├── pro_sum_sub.py
+│   │   ├── smaller_than_current.py
+│   │   └── two_sum.py
+│   ├── 21_aug
+│   │   ├── 20
+│   │   ├── contains_duplicate.py
+│   │   ├── insert_position.py
+│   │   ├── longest_substring.py
+│   │   ├── max_subarray.py
+│   │   ├── pallindrome_number.py
+│   │   ├── reverse_integer.py
+│   │   └── target_array.py
+│   ├── 23_aug
+│   │   ├── defanging_ip.py
+│   │   ├── good_pairs.py
+│   │   ├── jewels.py
+│   │   ├── max_candies.py
+│   │   ├── max_element.py
+│   │   ├── max_product.py
+│   │   ├── reduce_to_zero.py
+│   │   ├── remove_element.py
+│   │   ├── running_sum.py
+│   │   ├── shuffle_array.py
+│   │   ├── shuffle_string.py
+│   │   └── two_sum.py
+│   ├── 24_aug
+│   │   ├── assignment
+│   │   ├── k_closest_points.py
+│   │   ├── majority_element.py
+│   │   └── maximim_subarray.py
+│   ├── 31:08:20
+│   │   └── pivot_index.py
+│   ├── 31_aug
+│   │   ├── __pycache__
+│   │   │   └── sort.cpython-37.pyc
+│   │   ├── find_duplicate.py
+│   │   ├── pivot_index.py
+│   │   ├── sort.py
+│   │   └── subarray_sum.py
+│   ├── Doubts
+│   ├── leet_prob.py
+│   └── programming_problems.py
+├── practice_problems
+│   ├── alien_language_v1.py
+│   ├── alien_language_v2.py
+│   ├── array_piecies.py
+│   ├── basic_cal.py
+│   ├── binary_search.py
+│   ├── count_unival_trees.py
+│   ├── database.db
+│   ├── duplicate_number.py
+│   ├── interview.py
+│   ├── interview_v2.py
+│   ├── jump_tiles.py
+│   ├── kth_largest_element_of_stream.py
+│   ├── longest_substr_non_rep_char.py
+│   ├── matrix_operation.py
+│   ├── reconstruct_string.py
+│   ├── resultword_searchword.py
+│   ├── reverse_polish_notation.py
+│   ├── speeding_cars_v1.py
+│   ├── speeding_cars_v2.py
+│   ├── speeding_cars_v3.py
+│   ├── suffix_prefix.py
+│   └── trie.py
+├── practice_shop.py
+├── products_small.json
+├── python
+│   ├── dog.py
+│   ├── doubts
+│   ├── practice_questions
+│   ├── python_101
+│   ├── turtle_draw.py
+│   └── turtle_instruction
+├── remNoteRevision
+│   └── rough.py
+├── revision
+│   ├── binary_search.py
+│   ├── duplicate_elements.py
+│   ├── merge_sort.py
+│   ├── recursion
+│   │   ├── 1_two_sum.py
+│   │   └── smallerThanCurrent.py
+│   ├── steps
+│   └── subarray_sum.py
+├── summer_prep
+│   ├── __pycache__
+│   │   └── queue.cpython-39.pyc
+│   ├── arrays
+│   │   ├── sub_arrays.py
+│   │   └── sub_sets.py
+│   ├── binary\ search
+│   │   ├── binary_search_basic.py
+│   │   ├── binary_search_temp2.2.py
+│   │   └── binary_search_temp2.py
+│   ├── binary\ trees
+│   │   └── bfs_order.py
+│   ├── bounded_square_sum.py
+│   ├── choose_shops.py
+│   ├── consec_chars_optimized.py
+│   ├── consec_while.py
+│   ├── consecutive_characters.py
+│   ├── cost_array.py
+│   ├── graphs
+│   │   ├── __pycache__
+│   │   │   ├── topo_det_cycle_dfs.cpython-39.pyc
+│   │   │   └── topological_bfs.cpython-39.pyc
+│   │   ├── bfs.py
+│   │   ├── count_components.py
+│   │   ├── detect_cycle_dfs.py
+│   │   ├── dfs_iterative.py
+│   │   ├── dfs_recursive.py
+│   │   ├── matrix_bfs.py
+│   │   ├── matrix_dfs.py
+│   │   ├── number_of_sink_nodes.py
+│   │   ├── practice.py
+│   │   ├── rotting_oranges.py
+│   │   ├── topo_det_cycle_bfs.py
+│   │   ├── topo_det_cycle_dfs.py
+│   │   ├── topological_bfs.py
+│   │   └── topological_dfs.py
+│   ├── hash-table
+│   │   ├── hashTable_linkedlist.py
+│   │   └── hashTable_list.py
+│   ├── heap
+│   │   ├── heappushpop.py
+│   │   ├── heapq.py
+│   │   └── heapsort.py
+│   ├── linked-list
+│   │   ├── detectCycle.py
+│   │   ├── intersectionLinkedList.py
+│   │   ├── linkedList.py
+│   │   └── odd_even_linked_list.py
+│   ├── max_k_occurances.py
+│   ├── min_diff_of_array.py
+│   ├── most_frequent_digit.py
+│   ├── mutate_array.py
+│   ├── parsing_lines.py
+│   ├── parsing_lines2.py
+│   ├── queue\ and\ stack
+│   │   ├── qqueue.py
+│   │   └── stack.py
+│   ├── random.py
+│   ├── rough.py
+│   └── smallest_ele.py
+├── testPrepration
+│   ├── BTLongestConsecSequence.py
+│   ├── allPathsBetNodes.py
+│   ├── asFarFromLandAsPossible.py
+│   ├── bfsOfGraph.py
+│   ├── bottomLeftTreeValue.py
+│   ├── connectedComponents.py
+│   ├── containerWithMostWater.py
+│   ├── largestValueFromEachRow.py
+│   ├── longestSubstring.py
+│   ├── nearestRightNode.py
+│   ├── notes
+│   ├── productSum.py
+│   ├── roomsAndKeys.py
+│   ├── sumOfDeepestLeaves.py
+│   └── test.py
+└── textbooks
+    ├── 2008_Book_TheAlgorithmDesignManual.pdf
+    ├── 2015_Book_DataStructuresAndAlgorithmsWit.pdf
+    └── Data\ Structures\ and\ Algorithms\ Using\ Python.pdf
