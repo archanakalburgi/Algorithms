@@ -13,13 +13,15 @@ cases
 [[3,1],[1,2],[4,5]] -> -1
 [[1,3],[2,3],[4,3]] -> 3
 
-1. construct graph/adjcency list
-2. iterate keys 
-    - if len(graph[key]) == 0
+1. construct graph/adjacency list
+2. find in degree of nodes 
+2. iterate in_degree keys 
+    - if in_degree[key] == 0
         judge=key
-3. iterate keys 
+3. iterate graph keys 
     - if judge not in graph[key] and key != judge:
         return -1
+4. return judge
 """
 import collections
 
